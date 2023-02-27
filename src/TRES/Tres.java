@@ -8,7 +8,9 @@ public class Tres {
 
 	public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-		Triangulo triangulo = new Triangulo();
+    	double base= sc.nextDouble();
+    	double altura= sc.nextDouble();
+		Triangulo triangulo = new Triangulo(base, altura);
     	try {
     	System.out.println("Introduce la base del triángulo");
      	triangulo.setBase(sc.nextDouble());
@@ -42,17 +44,19 @@ public class Tres {
     public class Triangulo{
     	private double base;
     	private double altura;
+    	private double area;
     	
     	public Triangulo (double base, double altura) {
-    		this.setBase(base);
-    		this.setAltura(altura);
+    		this.base=base;
+    		this.altura=altura;
     	}
     
     
-	public double calcularArea(double altura, double base) {
+	public double calcularArea(double base, double altura) {
 		this.altura=altura;
 		this.base=base;
 		double area = (base*altura)/2;
+		this.setArea(area);
 		return area;
 	}
 
@@ -74,6 +78,16 @@ public class Tres {
 
 	public void setAltura(double altura) {
 		this.altura = altura;
+	}
+
+
+	public double getArea() {
+		return area;
+	}
+
+
+	public void setArea(double area) {
+		this.area = area;
 	}
 	
 	

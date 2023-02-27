@@ -25,15 +25,16 @@ public class Tres {
 	    	triangulo.setAltura(sc.nextDouble()); 
 			}
 		System.out.println("El area del triángulo es "+ triangulo.calcularArea(triangulo.getBase(), triangulo.getAltura())+" cm2");
-
+		
+    	File dos = new File("EjerciciosStreams/dos.txt");
+    	if(dos.exists()){
+    	
+    }
 
     	} catch (InputMismatchException e){
 			System.out.println("No has introducido un numero. \nPor favor introduce un numero");
     	}
-/*    File dos = new File("EjerciciosStreams/dos.txt");
-    	if(dos.exists()){
-    	area
-    }*/
+
 	}
 	
 	

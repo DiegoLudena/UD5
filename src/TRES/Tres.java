@@ -1,6 +1,8 @@
 package TRES;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -28,6 +30,12 @@ public class Tres {
 		
     	File dos = new File("EjerciciosStreams/dos.txt");
     	if(dos.exists()){
+            try(FileWriter fw = new FileWriter(dos)) {
+                fw.write("El área del triángulo es "+ triangulo.calcularArea(triangulo.getBase(), triangulo.getAltura())+" cm2");
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     	
     }
 

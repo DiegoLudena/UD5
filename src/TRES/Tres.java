@@ -8,9 +8,7 @@ public class Tres {
 
 	public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);
-    	double base= sc.nextDouble();
-    	double altura= sc.nextDouble();
-		Triangulo triangulo = new Triangulo(base, altura);
+		Triangulo triangulo = new Triangulo(0, 0);
     	try {
     	System.out.println("Introduce la base del triángulo");
      	triangulo.setBase(sc.nextDouble());
@@ -26,13 +24,12 @@ public class Tres {
 			System.out.println("Valor no valido. Indica un número positivo:");
 	    	triangulo.setAltura(sc.nextDouble()); 
 			}
+		System.out.println("El area del triángulo es "+ triangulo.calcularArea(triangulo.getBase(), triangulo.getAltura())+" cm2");
 
-    	
 
     	} catch (InputMismatchException e){
 			System.out.println("No has introducido un numero. \nPor favor introduce un numero");
     	}
-		System.out.println(triangulo.calcularArea(triangulo.getBase(), triangulo.getAltura()));
 /*    File dos = new File("EjerciciosStreams/dos.txt");
     	if(dos.exists()){
     	area
@@ -41,7 +38,7 @@ public class Tres {
 	
 	
   
-    public class Triangulo{
+    static class Triangulo{
     	private double base;
     	private double altura;
     	private double area;
